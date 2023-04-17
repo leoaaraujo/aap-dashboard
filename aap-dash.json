@@ -1,0 +1,1855 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "limit": 100,
+                "name": "Annotations & Alerts",
+                "showIn": 0,
+                "type": "dashboard"
+            }
+        ]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 3,
+    "iteration": 1680194553326,
+    "links": [],
+    "panels": [
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 22,
+            "panels": [],
+            "title": "License and Configuration",
+            "type": "row"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 1,
+                "y": 1
+            },
+            "id": 14,
+            "options": {
+                "content": "<!-- <img src=\"https://www.ansible.com/hubfs/Logo-Red_Hat-Ansible_Automation_Platform-A-Standard.svg\"> -->\n<img src=\"https://www.redhat.com/cms/managed-files/ansible-logo_0_0.png\" width=\"200px\" height=\"200px\">\n",
+                "mode": "html"
+            },
+            "pluginVersion": "7.5.17",
+            "timeFrom": null,
+            "timeShift": null,
+            "transparent": true,
+            "type": "text"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 2,
+                "x": 5,
+                "y": 1
+            },
+            "id": 2,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "/^version$/",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.17",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "awx_instance_info",
+                    "format": "table",
+                    "instant": true,
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "Version",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 7,
+                "y": 1
+            },
+            "id": 6,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.17",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "awx_license_instance_total",
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "Hosts Total",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "fixedColor": "rgb(255, 255, 255)",
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "noValue": "0",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 10,
+                "y": 1
+            },
+            "id": 12,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "/^insights_analytics$/",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.17",
+            "targets": [
+                {
+                    "exemplar": false,
+                    "expr": "awx_system_info",
+                    "format": "table",
+                    "hide": false,
+                    "instant": true,
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "Insights ",
+            "transformations": [],
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "noValue": "0",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Memory"
+                        },
+                        "properties": [
+                            {
+                                "id": "unit",
+                                "value": "decbytes"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 8,
+                "x": 13,
+                "y": 1
+            },
+            "id": 20,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.17",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "awx_instance_cpu{hostname=~\"$instance\"}",
+                    "format": "time_series",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "CPU",
+                    "refId": "A"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "awx_instance_memory{hostname=~\"$instance\"}",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Memory",
+                    "refId": "C"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "awx_instance_capacity{hostname=~\"$instance\"}",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Forks",
+                    "refId": "B"
+                }
+            ],
+            "title": "Capacity",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 21,
+                "y": 1
+            },
+            "id": 28,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.17",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_sessions_total{type=\"all\"})",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Users",
+                    "refId": "A"
+                }
+            ],
+            "title": "Connected Users",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 2,
+                "x": 5,
+                "y": 4
+            },
+            "id": 3,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "/^license_type$/",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.17",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "awx_system_info",
+                    "format": "table",
+                    "instant": true,
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "License Type",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "dtdurations"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 7,
+                "y": 4
+            },
+            "id": 4,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "/^license_expiry$/",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.17",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "awx_system_info",
+                    "format": "table",
+                    "instant": true,
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "License Expiry",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "fixedColor": "rgb(255, 255, 255)",
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "noValue": "0",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 10,
+                "y": 4
+            },
+            "id": 15,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "/^external_logger_enabled$/",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.17",
+            "targets": [
+                {
+                    "exemplar": false,
+                    "expr": "awx_system_info",
+                    "format": "table",
+                    "hide": false,
+                    "instant": true,
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "External Logger",
+            "transformations": [],
+            "type": "stat"
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 7
+            },
+            "id": 24,
+            "panels": [],
+            "title": "Inventory",
+            "type": "row"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 5,
+                "x": 0,
+                "y": 8
+            },
+            "id": 26,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.17",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_users_total)",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Users",
+                    "refId": "A"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_teams_total)",
+                    "hide": false,
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Teams",
+                    "refId": "B"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_organizations_total)",
+                    "hide": false,
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Organizations",
+                    "refId": "C"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_sessions_total{type=\"all\"})",
+                    "hide": true,
+                    "interval": "",
+                    "legendFormat": "All Session",
+                    "refId": "D"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_sessions_total{type=\"user\"})",
+                    "hide": true,
+                    "interval": "",
+                    "legendFormat": "User Session",
+                    "refId": "E"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_sessions_total{type=\"anonymous\"})",
+                    "hide": true,
+                    "interval": "",
+                    "legendFormat": "Anonymous Session",
+                    "refId": "F"
+                }
+            ],
+            "title": "Access",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 5,
+                "y": 8
+            },
+            "id": 17,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.17",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "count(awx_instance_info{hostname=~\".*\"})",
+                    "interval": "",
+                    "legendFormat": "",
+                    "refId": "A"
+                }
+            ],
+            "title": "Instances",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 10
+                            },
+                            {
+                                "color": "yellow",
+                                "value": 30
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 8,
+                "y": 8
+            },
+            "id": 10,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.17",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "awx_license_instance_free",
+                    "interval": "",
+                    "legendFormat": "Available",
+                    "refId": "A"
+                }
+            ],
+            "title": "Hosts Available",
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 2,
+                    "mappings": [],
+                    "noValue": "0",
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 70
+                            },
+                            {
+                                "color": "red",
+                                "value": 90
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 11,
+                "y": 8
+            },
+            "id": 8,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.5.17",
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_license_instance_total - awx_license_instance_free)",
+                    "hide": true,
+                    "interval": "",
+                    "legendFormat": "Used",
+                    "refId": "A"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "(awx_license_instance_total - awx_license_instance_free)/100",
+                    "hide": false,
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Used1",
+                    "refId": "C"
+                },
+                {
+                    "exemplar": false,
+                    "expr": "(awx_license_instance_total - awx_license_instance_free)/100",
+                    "hide": true,
+                    "interval": "",
+                    "legendFormat": "Used2",
+                    "refId": "B"
+                }
+            ],
+            "title": "Hosts Used",
+            "transformations": [],
+            "type": "stat"
+        },
+        {
+            "aliasColors": {},
+            "bars": true,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 10,
+                "x": 14,
+                "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 30,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "hideEmpty": true,
+                "hideZero": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": false,
+            "linewidth": 5,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.17",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": true,
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_inventories_total)",
+                    "interval": "",
+                    "legendFormat": "Inventory",
+                    "refId": "A"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_projects_total)",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Projects",
+                    "refId": "B"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_job_templates_total)",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Job Template",
+                    "refId": "C"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_workflow_job_templates_total)",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Workflow",
+                    "refId": "D"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_hosts_total{type=\"active\"})",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Active Hosts",
+                    "refId": "E"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_schedules_total)",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Schedules",
+                    "refId": "F"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Resources",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "series",
+                "name": null,
+                "show": true,
+                "values": [
+                    "current"
+                ]
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:392",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:393",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 14
+            },
+            "id": 32,
+            "panels": [],
+            "title": "Statistics",
+            "type": "row"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "fill": 2,
+            "fillGradient": 5,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 15
+            },
+            "hiddenSeries": false,
+            "id": 42,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "hideEmpty": true,
+                "hideZero": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.17",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:904",
+                    "alias": "Value",
+                    "legend": false,
+                    "lines": false
+                }
+            ],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "sum(rate(container_cpu_usage_seconds_total{namespace=~\"aap\",container!=\"POD\",pod!=\"\"}[15m])) by (container)",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "{{ container }}",
+                    "refId": "A"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "CPU Usage",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:874",
+                    "decimals": 3,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:875",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "decbytes"
+                },
+                "overrides": []
+            },
+            "fill": 3,
+            "fillGradient": 3,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 15
+            },
+            "hiddenSeries": false,
+            "id": 44,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "hideEmpty": true,
+                "hideZero": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null as zero",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.17",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:715",
+                    "alias": "Value",
+                    "legend": false,
+                    "lines": false
+                }
+            ],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "sum(rate(container_memory_working_set_bytes{namespace=\"aap\",container!=\"POD\",pod!=\"\"}[15m])) by (container)",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "{{ container }}",
+                    "refId": "B"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Memory Usage",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:781",
+                    "format": "decbytes",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:782",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 3,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 23
+            },
+            "hiddenSeries": false,
+            "id": 34,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "hideEmpty": true,
+                "hideZero": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "sort": "current",
+                "sortDesc": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.17",
+            "pointradius": 0.5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": true,
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_status_total{status=\"running\"})",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Running",
+                    "refId": "C"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_status_total{status=\"error\"})",
+                    "interval": "",
+                    "legendFormat": "Error",
+                    "refId": "A"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_status_total{status=\"canceled\"})",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Canceled",
+                    "refId": "B"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_status_total{status=\"failed\"})",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Failed",
+                    "refId": "D"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_status_total{status=\"successful\"})",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Successful",
+                    "refId": "E"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_status_total{status=\"waiting\"})",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Waiting",
+                    "refId": "F"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_status_total{status=\"pending\"})",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Pending",
+                    "refId": "G"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Job Launched Statistics",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:536",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:537",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "fill": 4,
+            "fillGradient": 5,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 23
+            },
+            "hiddenSeries": false,
+            "id": 36,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "hideEmpty": false,
+                "hideZero": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.17",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:922",
+                    "alias": "Failed",
+                    "color": "#F2495C",
+                    "transform": "negative-Y"
+                }
+            ],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": true,
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "sum(awx_status_total{status=\"successful\"})",
+                    "hide": false,
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Successful",
+                    "refId": "A"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "sum(sum(awx_status_total{status=\"failed\"}) + sum(awx_status_total{status=\"error\"}))",
+                    "hide": false,
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Failed",
+                    "refId": "B"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [
+                {
+                    "$$hashKey": "object:1011",
+                    "colorMode": "background6",
+                    "fill": true,
+                    "fillColor": "rgba(234, 112, 112, 0.12)",
+                    "line": false,
+                    "lineColor": "rgba(237, 46, 24, 0.60)",
+                    "op": "time"
+                }
+            ],
+            "timeShift": null,
+            "title": "Job Execution",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:647",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:648",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "s"
+                },
+                "overrides": []
+            },
+            "fill": 3,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 31
+            },
+            "hiddenSeries": false,
+            "id": 38,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.17",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "avg(rate(task_manager_get_tasks_seconds[5m]))",
+                    "interval": "",
+                    "legendFormat": "Loading Tasks",
+                    "refId": "A"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "avg(rate(task_manager_start_task_seconds[5m]))",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Starting Tasks",
+                    "refId": "B"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "avg(rate(task_manager_process_running_tasks_seconds[5m]))",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Processing Running Tasks",
+                    "refId": "C"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "avg(rate(task_manager_process_pending_tasks_seconds[5m]))",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Processing Pending Tasks",
+                    "refId": "D"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Time Execution",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:1465",
+                    "format": "s",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:1466",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "s"
+                },
+                "overrides": []
+            },
+            "fill": 3,
+            "fillGradient": 5,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 31
+            },
+            "hiddenSeries": false,
+            "id": 40,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.17",
+            "pointradius": 0.5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "exemplar": true,
+                    "expr": "avg(rate(task_manager_commit_seconds[1h]))",
+                    "interval": "",
+                    "legendFormat": "DB Transactions",
+                    "refId": "A"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "avg(rate(dependency_manager_get_tasks_seconds[1h]))",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Loading Pending Tasks from DB",
+                    "refId": "B"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "avg(rate(workflow_manager_get_tasks_seconds[1h]))",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Loading Workflow Tasks from DB",
+                    "refId": "C"
+                },
+                {
+                    "exemplar": true,
+                    "expr": "avg(rate(callback_receiver_events_insert_db_seconds[1h]))",
+                    "hide": false,
+                    "interval": "",
+                    "legendFormat": "Saving Events to DB",
+                    "refId": "D"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Transactions Time  - Database",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:1863",
+                    "format": "s",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:1864",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 27,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "my-aap-service",
+                    "value": "my-aap-service"
+                },
+                "datasource": null,
+                "definition": "label_values(awx_instance_info, service)",
+                "description": "Service",
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": "Service",
+                "multi": false,
+                "name": "service",
+                "options": [],
+                "query": {
+                    "query": "label_values(awx_instance_info, service)",
+                    "refId": "StandardVariableQuery"
+                },
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tags": [],
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": "my-aap-8478d46695-tf8qr",
+                    "value": "my-aap-8478d46695-tf8qr"
+                },
+                "datasource": null,
+                "definition": "label_values(awx_instance_info, hostname)",
+                "description": "",
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": "Instance",
+                "multi": false,
+                "name": "instance",
+                "options": [],
+                "query": {
+                    "query": "label_values(awx_instance_info, hostname)",
+                    "refId": "StandardVariableQuery"
+                },
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tags": [],
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-30m",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "AAP - Metrics",
+    "uid": "oJxW1cBVz",
+    "version": 24
+}
