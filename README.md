@@ -26,4 +26,5 @@ oc create -f grafana-aap-dashboard.yaml -n openshift-user-workload-monitoring
 &nbsp;
 
 
-![](files/aap-dash.png)
+![](files/aap-dash-1.png)
+![](files/aap-dash-2.png)
