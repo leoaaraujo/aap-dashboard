@@ -528,7 +528,7 @@
               }
             ]
           },
-          "unit": "dtdurations"
+          "unit": "dtdhms"
         },
         "overrides": []
       },
