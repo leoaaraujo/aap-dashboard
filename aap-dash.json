@@ -26,15 +26,14 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 5,
   "links": [],
   "liveNow": false,
   "panels": [
     {
       "collapsed": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "gridPos": {
         "h": 1,
@@ -47,8 +46,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "refId": "A"
         }
@@ -58,8 +56,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "gridPos": {
         "h": 6,
@@ -76,8 +73,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "refId": "A"
         }
@@ -87,8 +83,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -116,7 +111,7 @@
       },
       "id": 2,
       "options": {
-        "colorMode": "value",
+        "colorMode": "background",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
@@ -134,8 +129,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "awx_instance_info",
@@ -151,8 +145,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -174,11 +167,11 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
+        "w": 5,
         "x": 7,
         "y": 1
       },
-      "id": 6,
+      "id": 3,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -188,7 +181,7 @@
           "calcs": [
             "lastNotNull"
           ],
-          "fields": "",
+          "fields": "/^license_type$/",
           "values": false
         },
         "text": {},
@@ -198,23 +191,23 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
-          "expr": "awx_license_instance_total",
+          "expr": "awx_system_info",
+          "format": "table",
+          "instant": true,
           "interval": "",
           "legendFormat": "",
           "refId": "A"
         }
       ],
-      "title": "Hosts Total",
+      "title": "License Type",
       "type": "stat"
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -266,7 +259,7 @@
       "gridPos": {
         "h": 3,
         "w": 3,
-        "x": 10,
+        "x": 12,
         "y": 1
       },
       "id": 12,
@@ -289,8 +282,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": false,
           "expr": "awx_system_info",
@@ -308,110 +300,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "noValue": "0",
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "blue",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Memory"
-            },
-            "properties": [
-              {
-                "id": "unit",
-                "value": "decbytes"
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 8,
-        "x": 13,
-        "y": 1
-      },
-      "id": 20,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.1.6",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
-          },
-          "exemplar": true,
-          "expr": "awx_instance_cpu{hostname=~\"$instance\"}",
-          "format": "time_series",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "CPU",
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
-          },
-          "exemplar": true,
-          "expr": "awx_instance_memory{hostname=~\"$instance\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Memory",
-          "refId": "C"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
-          },
-          "exemplar": true,
-          "expr": "awx_instance_capacity{hostname=~\"$instance\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Forks",
-          "refId": "B"
-        }
-      ],
-      "title": "Capacity",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -434,15 +323,15 @@
       "gridPos": {
         "h": 6,
         "w": 3,
-        "x": 21,
+        "x": 15,
         "y": 1
       },
-      "id": 28,
+      "id": 6,
       "options": {
-        "colorMode": "value",
-        "graphMode": "area",
+        "colorMode": "background",
+        "graphMode": "none",
         "justifyMode": "auto",
-        "orientation": "horizontal",
+        "orientation": "auto",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -457,24 +346,163 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
-          "expr": "sum(awx_sessions_total{type=\"all\"})",
-          "instant": false,
+          "expr": "awx_license_instance_total",
           "interval": "",
-          "legendFormat": "Users",
+          "legendFormat": "",
           "refId": "A"
         }
       ],
-      "title": "Connected Users",
+      "title": "Hosts Total",
       "type": "stat"
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 18,
+        "y": 1
+      },
+      "id": 10,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "awx_license_instance_free",
+          "hide": false,
+          "legendFormat": "Available",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "Hosts Available",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "noValue": "0",
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 70
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 21,
+        "y": 1
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "100 - ( awx_license_instance_free / awx_license_instance_total * 100 )",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "Used",
+          "range": true,
+          "refId": "C"
+        }
+      ],
+      "title": "Hosts Used",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -488,6 +516,14 @@
               {
                 "color": "green",
                 "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "green",
+                "value": ""
               }
             ]
           }
@@ -500,9 +536,9 @@
         "x": 5,
         "y": 4
       },
-      "id": 3,
+      "id": 17,
       "options": {
-        "colorMode": "value",
+        "colorMode": "background",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
@@ -510,7 +546,7 @@
           "calcs": [
             "lastNotNull"
           ],
-          "fields": "/^license_type$/",
+          "fields": "",
           "values": false
         },
         "text": {},
@@ -520,25 +556,23 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "awx_system_info",
-          "format": "table",
-          "instant": true,
+          "expr": "count(awx_instance_info{hostname=~\".*\"})",
           "interval": "",
           "legendFormat": "",
+          "range": true,
           "refId": "A"
         }
       ],
-      "title": "License Type",
+      "title": "Instances",
       "type": "stat"
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -561,7 +595,7 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
+        "w": 5,
         "x": 7,
         "y": 4
       },
@@ -585,9 +619,9 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
           "expr": "awx_system_info",
           "format": "table",
@@ -602,8 +636,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -655,7 +688,7 @@
       "gridPos": {
         "h": 3,
         "w": 3,
-        "x": 10,
+        "x": 12,
         "y": 4
       },
       "id": 15,
@@ -678,8 +711,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": false,
           "expr": "awx_system_info",
@@ -698,8 +730,7 @@
     {
       "collapsed": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "gridPos": {
         "h": 1,
@@ -712,8 +743,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "refId": "A"
         }
@@ -723,8 +753,7 @@
     },
     {
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -746,7 +775,7 @@
       },
       "gridPos": {
         "h": 6,
-        "w": 5,
+        "w": 7,
         "x": 0,
         "y": 8
       },
@@ -770,8 +799,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_users_total)",
@@ -782,8 +810,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_teams_total)",
@@ -795,8 +822,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_organizations_total)",
@@ -808,267 +834,17 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
-          "exemplar": true,
+          "editorMode": "code",
           "expr": "sum(awx_sessions_total{type=\"all\"})",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "All Session",
-          "refId": "D"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
-          },
-          "exemplar": true,
-          "expr": "sum(awx_sessions_total{type=\"user\"})",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "User Session",
-          "refId": "E"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
-          },
-          "exemplar": true,
-          "expr": "sum(awx_sessions_total{type=\"anonymous\"})",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "Anonymous Session",
-          "refId": "F"
+          "hide": false,
+          "legendFormat": "Online Users",
+          "range": true,
+          "refId": "G"
         }
       ],
       "title": "Access",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 3,
-        "x": 5,
-        "y": 8
-      },
-      "id": 17,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.1.6",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
-          },
-          "exemplar": true,
-          "expr": "count(awx_instance_info{hostname=~\".*\"})",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "title": "Instances",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "decimals": 0,
-          "mappings": [],
-          "max": 100,
-          "min": 0,
-          "thresholds": {
-            "mode": "percentage",
-            "steps": [
-              {
-                "color": "red",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 15
-              },
-              {
-                "color": "yellow",
-                "value": 30
-              },
-              {
-                "color": "green",
-                "value": 40
-              }
-            ]
-          },
-          "unit": "percent"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 3,
-        "x": 8,
-        "y": 8
-      },
-      "id": 10,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.1.6",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
-          },
-          "editorMode": "code",
-          "expr": "awx_license_instance_free/awx_license_instance_total*100",
-          "hide": false,
-          "legendFormat": "Available",
-          "range": true,
-          "refId": "B"
-        }
-      ],
-      "title": "Hosts Available",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "decimals": 0,
-          "mappings": [],
-          "max": 100,
-          "min": 0,
-          "noValue": "0",
-          "thresholds": {
-            "mode": "percentage",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 70
-              },
-              {
-                "color": "red",
-                "value": 90
-              }
-            ]
-          },
-          "unit": "percent"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 3,
-        "x": 11,
-        "y": 8
-      },
-      "id": 8,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.1.6",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
-          },
-          "editorMode": "code",
-          "exemplar": false,
-          "expr": "100 - ( awx_license_instance_free / awx_license_instance_total * 100 )",
-          "hide": false,
-          "instant": false,
-          "interval": "",
-          "legendFormat": "Used",
-          "range": true,
-          "refId": "C"
-        }
-      ],
-      "title": "Hosts Used",
-      "transformations": [],
       "type": "stat"
     },
     {
@@ -1077,15 +853,14 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 6,
         "w": 10,
-        "x": 14,
+        "x": 7,
         "y": 8
       },
       "hiddenSeries": false,
@@ -1121,8 +896,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_inventories_total)",
@@ -1132,8 +906,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_projects_total)",
@@ -1144,8 +917,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_job_templates_total)",
@@ -1156,8 +928,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_workflow_job_templates_total)",
@@ -1168,8 +939,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_hosts_total{type=\"active\"})",
@@ -1180,8 +950,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_schedules_total)",
@@ -1226,10 +995,107 @@
       }
     },
     {
+      "datasource": {
+        "type": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Memory"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "decbytes"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 7,
+        "x": 17,
+        "y": 8
+      },
+      "id": 20,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus"
+          },
+          "exemplar": true,
+          "expr": "awx_instance_cpu{hostname=~\"$instance\"}",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "CPU",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus"
+          },
+          "exemplar": true,
+          "expr": "awx_instance_memory{hostname=~\"$instance\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Memory",
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus"
+          },
+          "exemplar": true,
+          "expr": "awx_instance_capacity{hostname=~\"$instance\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Forks",
+          "refId": "B"
+        }
+      ],
+      "title": "Capacity",
+      "type": "stat"
+    },
+    {
       "collapsed": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "gridPos": {
         "h": 1,
@@ -1242,8 +1108,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "refId": "A"
         }
@@ -1257,8 +1122,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "fill": 2,
       "fillGradient": 5,
@@ -1308,8 +1172,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(rate(container_cpu_usage_seconds_total{namespace=~\"aap\",container!=\"POD\",pod!=\"\"}[15m])) by (container)",
@@ -1358,8 +1221,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1415,8 +1277,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(rate(container_memory_working_set_bytes{namespace=\"aap\",container!=\"POD\",pod!=\"\"}[15m])) by (container)",
@@ -1464,8 +1325,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "fill": 1,
       "fillGradient": 3,
@@ -1510,8 +1370,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_status_total{status=\"running\"})",
@@ -1522,8 +1381,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_status_total{status=\"error\"})",
@@ -1533,8 +1391,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_status_total{status=\"canceled\"})",
@@ -1545,8 +1402,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_status_total{status=\"failed\"})",
@@ -1557,8 +1413,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_status_total{status=\"successful\"})",
@@ -1569,8 +1424,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_status_total{status=\"waiting\"})",
@@ -1581,8 +1435,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_status_total{status=\"pending\"})",
@@ -1630,8 +1483,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1687,8 +1539,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(awx_status_total{status=\"successful\"})",
@@ -1700,8 +1551,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "sum(sum(awx_status_total{status=\"failed\"}) + sum(awx_status_total{status=\"error\"}))",
@@ -1760,8 +1610,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1797,7 +1646,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.17",
+      "pluginVersion": "9.1.6",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1808,8 +1657,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "avg(rate(task_manager_get_tasks_seconds[5m]))",
@@ -1819,8 +1667,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "avg(rate(task_manager_start_task_seconds[5m]))",
@@ -1831,8 +1678,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "avg(rate(task_manager_process_running_tasks_seconds[5m]))",
@@ -1843,8 +1689,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "avg(rate(task_manager_process_pending_tasks_seconds[5m]))",
@@ -1892,8 +1737,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "prometheus",
-        "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+        "type": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1929,7 +1773,7 @@
         "alertThreshold": false
       },
       "percentage": false,
-      "pluginVersion": "7.5.17",
+      "pluginVersion": "9.1.6",
       "pointradius": 0.5,
       "points": false,
       "renderer": "flot",
@@ -1940,8 +1784,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "avg(rate(task_manager_commit_seconds[1h]))",
@@ -1951,8 +1794,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "avg(rate(dependency_manager_get_tasks_seconds[1h]))",
@@ -1963,8 +1805,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "avg(rate(workflow_manager_get_tasks_seconds[1h]))",
@@ -1975,8 +1816,7 @@
         },
         {
           "datasource": {
-            "type": "prometheus",
-            "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+            "type": "prometheus"
           },
           "exemplar": true,
           "expr": "avg(rate(callback_receiver_events_insert_db_seconds[1h]))",
@@ -2027,13 +1867,12 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "All",
           "value": "$__all"
         },
         "datasource": {
-          "type": "prometheus",
-          "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+          "type": "prometheus"
         },
         "definition": "label_values(awx_instance_info, service)",
         "description": "Service",
@@ -2063,8 +1902,7 @@
           "value": "$__all"
         },
         "datasource": {
-          "type": "prometheus",
-          "uid": "ae66c82d-4949-4c28-8ce8-0eeef2a7eefa"
+          "type": "prometheus"
         },
         "definition": "label_values(awx_instance_info, hostname)",
         "description": "",
@@ -2096,7 +1934,7 @@
   "timepicker": {},
   "timezone": "",
   "title": "AAP - Metrics",
-  "uid": "oJxW1cBVz",
-  "version": 4,
+  "uid": "",
+  "version": 3,
   "weekStart": ""
 }
