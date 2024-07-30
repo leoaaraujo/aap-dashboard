@@ -1990,7 +1990,7 @@
             "type": "prometheus"
           },
           "definition": "query_result(awx_instance_info{namespace=~\"$namespace\",job=~\"$service\"})",
-          "hide": 0,
+          "hide": 2,
           "includeAll": false,
           "label": "Pod",
           "multi": false,
